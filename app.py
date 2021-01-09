@@ -2,6 +2,7 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pickle
+import os
 
 # Load the Multinomial Naive Bayes model and CountVectorizer object from disk
 filename = 'movie-genre-mnb-model.pkl'
@@ -27,5 +28,5 @@ if __name__ == '__main__':
 	#app.run(host="localhost", port=3000, debug=True)
 	#log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
 	#app.run(debug=True)
-	port = int(os.environ.get('PORT', 3000))
-    app.run(host='0.0.0.0', port=port)
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port, debug=True)
