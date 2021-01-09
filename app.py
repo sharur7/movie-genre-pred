@@ -24,5 +24,5 @@ def predict():
     	return render_template('after.html', prediction=my_prediction)
 
 if __name__ == '__main__':
-	#app.run(host="localhost", port=3000, debug=True)
+	app.run(host="localhost", port=3000, debug=True)
 	log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
